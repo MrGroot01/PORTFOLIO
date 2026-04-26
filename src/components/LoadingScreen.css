@@ -1,0 +1,82 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #06060e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOutScreen 0.5s ease 1.8s forwards;
+}
+
+.loading-content {
+  text-align: center;
+  animation: scaleIn 0.5s ease;
+}
+
+.loading-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+.logo-bracket {
+  color: #00d4aa;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.logo-name {
+  color: #f0f0f8;
+  margin: 0 0.15rem;
+}
+
+.loading-bar-wrap {
+  width: 200px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  margin: 0 auto 1.2rem;
+  overflow: hidden;
+}
+
+.loading-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00d4aa, #7c3aed);
+  border-radius: 3px;
+  animation: loadProgress 1.7s ease forwards;
+}
+
+.loading-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #555577;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes loadProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes fadeOutScreen {
+  to { opacity: 0; pointer-events: none; }
+}
